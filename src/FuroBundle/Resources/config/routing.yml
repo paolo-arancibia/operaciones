@@ -1,0 +1,17 @@
+homepage:
+    path: //
+    defaults: { _controller: FuroBundle:Furo:index }
+
+furo_list:
+    path: /furo/list
+    defaults: { _controller: FuroBundle:Furo:list }
+
+furo_new:
+    path: /furo/new/{step}
+    defaults: { _controller: FuroBundle:Furo:list }
+    requirements:
+        page: '\d+'
+
+login:
+    path: /login
+    defaults: { _controller: FuroBundle:Access:login }

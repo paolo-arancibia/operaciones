@@ -1,13 +1,66 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
-        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
-    </body>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Operaciones - @usuario</title>
+    {% block stylesheets %}
+      {% stylesheets '../vendor/twbs/bootstrap/dist/css/bootstrap.min.css' %}
+        <link rel="stylesheet" href="{{ asset_url }}"/>
+      {% endstylesheets %}
+      <style type="text/css">
+       html {
+         position: relative;
+         min-height: 100%;
+       }
+
+       body {
+         margin-bottom: 60px;
+       }
+
+       .footer {
+         position: absolute;
+         bottom: 0;
+         width: 100%;
+         height: 60px;
+         line-height: 60px;
+       }
+
+       #logo {
+         margin: 15px 20px;
+       }
+      </style>
+    {% endblock %}
+  </head>
+
+  <body>
+    {% block header %}
+      <header class="row justify-content-between py-3">
+	<div id="logo" class="col-2 text-left"><img src="{{ asset('../web/logo-lf.png') }}" /></div>
+	<div class="col-auto text-left"><h3 class="px-2"><strong>OPERACIONES</strong></h3></div>
+      </header>
+    {% endblock %}
+
+    {% block menu %}
+    {% endblock %}
+
+    {% block content %}
+    {% endblock %}
+
+    {% block footer %}
+      <footer class="footer">
+        <div class="container m-0 p-0">
+          <span class="col-6 text-muted">Powered by Análisis y Desarrollo</span>
+          <span class="col-6 text-muted">Ilustre Municipalidad de la Florida</span>
+        </div>
+      </footer>
+    {% endblock %}
+
+    {% block javascripts %}
+      {% javascripts
+      '../vendor/components/jquery/jquery.min.js'
+      '../vendor/twbs/bootstrap/dist/js/bootstrap.bundle.min.js' %}
+        <script src="{{ asset_url }}"></script>
+      {% endjavascripts %}
+    {% endblock %}
+  </body>
 </html>

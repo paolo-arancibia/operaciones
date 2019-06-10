@@ -1,0 +1,43 @@
+{% extends '::base.html.twig' %}
+
+{% block stylesheets %}
+  {{ parent() }}
+
+  <style type="text/css">
+   #menu {
+     background-color: #f6f6f6;
+     border: 1px solid #e7e7e7;
+   }
+
+   #menu .nav .nav-link {
+     color: #777;
+     font-size: 14px;
+     text-decoration: none;
+     display: block;
+     padding: 15px 15px;
+   }
+
+   #menu .nav .dropdown-menu .dropdown-item {
+     padding: 3px 20px;
+   }
+  </style>
+{% endblock %}
+
+{% block menu %}
+  <div id="menu" class="d-flex mt-2 mb-4">
+    <nav class="nav mr-auto">
+      <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">FURO</a>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="#">Nuevo FURO</a>
+        <a class="dropdown-item" href="#">Lista de FUROs</a>
+      </div>
+    </nav>
+
+    <nav class="menu-login nav">
+      <a  class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">@usuario</a>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="#">Cerrar sesión</a>
+      </div>
+    </nav>
+  </div>
+{% endblock %}

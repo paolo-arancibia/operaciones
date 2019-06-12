@@ -8,9 +8,15 @@ furo_list:
 
 furo_new:
     path: /furo/new/{step}
-    defaults: { _controller: FuroBundle:Furo:list }
+    defaults: { _controller: FuroBundle:Furo:new }
     requirements:
-        page: '\d+'
+        step: '\d+'
+
+furo_view:
+    path: /furo/view/{id}
+    defaults: { _controller: FuroBundle:Furo:view }
+    requirements:
+        id: '\d+'
 
 login:
     path: /login

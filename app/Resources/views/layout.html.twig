@@ -28,8 +28,8 @@
     <nav class="nav mr-auto">
       <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">FURO</a>
       <div class="dropdown-menu">
-        <a class="dropdown-item" href="#">Nuevo FURO</a>
-        <a class="dropdown-item" href="#">Lista de FUROs</a>
+        <a class="dropdown-item" href="{{ url('furo_new', {'step': 1}) }}">Nuevo FURO</a>
+        <a class="dropdown-item" href="{{ url('furo_list') }}">Lista de FUROs</a>
       </div>
     </nav>
 

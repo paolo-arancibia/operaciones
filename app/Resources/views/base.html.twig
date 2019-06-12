@@ -5,52 +5,67 @@
     <title>Operaciones - @usuario</title>
     {% block stylesheets %}
       {% stylesheets '../vendor/twbs/bootstrap/dist/css/bootstrap.min.css' %}
-        <link rel="stylesheet" href="{{ asset_url }}"/>
+      <link rel="stylesheet" href="{{ asset_url }}"/>
       {% endstylesheets %}
+
       <style type="text/css">
-       html {
-         position: relative;
-         min-height: 100%;
-       }
+        html {
+          position: relative;
+          min-height: 100%;
+        }
 
-       body {
-         margin-bottom: 60px;
-       }
+        body {
+          margin-bottom: 60px;
+        }
 
-       .footer {
-         position: absolute;
-         bottom: 0;
-         width: 100%;
-         height: 60px;
-         line-height: 60px;
-       }
+        .title {
+          color: rgb(51, 122, 183) !important;
+          font-size: 24px;
+          margin: 20px 0px 10px 0px !important;
+        }
 
-       #logo {
-         margin: 15px 20px;
-       }
+        #container {
+          min-height: auto;
+        }
+
+        #container {
+          background-color: #f6f6f6;
+          border: 1px solid #e7e7e7;
+        }
+
+        .footer {
+          position: absolute;
+          bottom: 0;
+          width: 100%;
+          height: 60px;
+        }
+
+        #logo {
+          margin: 15px 20px;
+        }
       </style>
     {% endblock %}
   </head>
 
   <body>
     {% block header %}
-      <header class="row justify-content-between py-3">
-	<div id="logo" class="col-2 text-left"><img src="{{ asset('../web/logo-lf.png') }}" /></div>
-	<div class="col-auto text-left"><h3 class="px-2"><strong>OPERACIONES</strong></h3></div>
+      <header class="header">
+	<div class="container-fluid row">
+          <div id="logo" class="col-2 text-left pl-0"><img src="{{ asset('../web/logo-lf.png') }}" /></div>
+          <div class="col-auto text-left ml-auto py-3"><h3 class="px-2"><strong>OPERACIONES</strong></h3></div>
+	</div>
       </header>
     {% endblock %}
 
-    {% block menu %}
-    {% endblock %}
+    {% block menu %}{% endblock %}
 
-    {% block content %}
-    {% endblock %}
+    {% block content %}{% endblock %}
 
     {% block footer %}
       <footer class="footer">
-        <div class="container m-0 p-0">
-          <span class="col-6 text-muted">Powered by Análisis y Desarrollo</span>
-          <span class="col-6 text-muted">Ilustre Municipalidad de la Florida</span>
+        <div class="container-fluid d-flex flex-column justify-content-center">
+          <span class="text-muted w-25">Powered by Análisis y Desarrollo</span>
+	  <span class="text-muted w-25">Ilustre Municipalidad de la Florida</span>
         </div>
       </footer>
     {% endblock %}

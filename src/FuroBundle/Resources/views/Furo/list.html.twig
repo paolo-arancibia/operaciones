@@ -2,7 +2,17 @@
 
 {% block content %}
   <div id="container" class="container-fluid">
-    <h2 class="mb-2">Lista de FUROs</h2>
+
+    {#
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">FUROs</li>
+        <li class="breadcrumb-item active" aria-current="page">Lista de FURos</li>
+      </ol>
+    </nav>
+    #}
+
+    <h3 class="title mb-2 border-bottom border-secondary">Lista de FUROs</h3>
 
     <form id="filters" class="mb-2">
       <div class="row justify-content-end">
@@ -39,44 +49,19 @@
           <td>Jaime Gonzalez</td>
           <td>Cerrado</td>
         </tr>
-        <tr>
-          <td>1234</td>
-          <td>31/12/1999</td>
-          <td>Paolo Arancibia</td>
-          <td>Jaime Gonzalez</td>
-          <td>Abierto</td>
-        </tr>
-        <tr>
-          <td>1234</td>
-          <td>31/12/1999</td>
-          <td>Paolo Arancibia</td>
-          <td>Jaime Gonzalez</td>
-          <td>Abierto</td>
-        </tr>
-        <tr>
-          <td>1234</td>
-          <td>31/12/1999</td>
-          <td>Paolo Arancibia</td>
-          <td>Jaime Gonzalez</td>
-          <td>Abierto</td>
-        </tr>
-        <tr>
-          <td>1234</td>
-          <td>31/12/1999</td>
-          <td>Paolo Arancibia</td>
-          <td>Jaime Gonzalez</td>
-          <td>Abierto</td>
-        </tr>
       </tbody>
     </table>
   </div>
-  <style>
-   input[type="date"]::before{
-     color: #ffffff;
-     content: attr(placeholder) ": ";
-   }
-   input[type="date"]:focus::before {
-     content: "" !important;
-   }
-  </style>
+{% endblock %}
+
+{% block javascripts %}
+  {{ parent() }}
+
+  <script type="text/javascript">
+   $(document).ready(function() {
+     $('table tr').click(function(){
+       location.href = '{{ url('furo_view', {'id': 1}) }}';
+     }).css('cursor','pointer');
+   });
+  </script>
 {% endblock %}
